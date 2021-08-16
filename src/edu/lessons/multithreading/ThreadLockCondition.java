@@ -19,6 +19,7 @@ public class ThreadLockCondition {
 class Store1{
 
     private int product=0;
+
     ReentrantLock locker;
     Condition condition;
 
@@ -28,7 +29,6 @@ class Store1{
     }
 
     public void get() {
-
         locker.lock();
         try{
             while (product<1)
