@@ -29,7 +29,7 @@ public class App {
 
         for (String str : dataFromFile) {
             for (int i = 0; i < str.length(); i++) {
-                if (ch == str.toLowerCase().charAt(i))
+                if (Character.toLowerCase(ch) == Character.toLowerCase(str.charAt(i)))
                     temp++;
             }
 
