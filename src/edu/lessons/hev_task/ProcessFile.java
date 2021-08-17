@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProcessFile {
-    private Integer max = 0, temp = 0;
+    private int max = 0, temp = 0;
     private char ch;
     private Path path;
     private List<String> result;
@@ -38,7 +38,7 @@ public class ProcessFile {
                 max = temp;
                 result.clear();
                 result.add(str);
-            } else if (max.equals(temp))
+            } else if (max == temp)
                 result.add(str);
 
             temp = 0;
