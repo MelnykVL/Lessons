@@ -21,6 +21,14 @@ public class ProcessFile {
         this.path = path;
     }
 
+    public Path getPath() {
+        return path;
+    }
+
+    public void setPath(Path path) {
+        this.path = path;
+    }
+
     private List<String> stringProcessing(String dataFromFile, List<String> result) {
         temp = 0;
 
