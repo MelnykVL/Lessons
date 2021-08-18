@@ -8,18 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProcessFile {
-    private int max = 0, temp = 0;
-    private char ch;
+    private int max, temp;
     private Path path;
+    private char ch;
     private List<String> result;
 
-    public ProcessFile(char ch) {
+    public ProcessFile() {
         path = Path.of("src/edu/lessons/hev_task/hev_task.txt");
-        this.ch = ch;
     }
 
-    public ProcessFile(char ch, Path path) {
-        this.ch = ch;
+    public ProcessFile(Path path) {
         this.path = path;
     }
 
@@ -47,7 +45,9 @@ public class ProcessFile {
         return result;
     }
 
-    public List<String> getResult() throws IOException {
+    public List<String> getResult(char ch) throws IOException {
+        this.max = 0;
+        this.ch = ch;
         result = new ArrayList<>();
 
         try (BufferedReader reader = Files.newBufferedReader(path)) {

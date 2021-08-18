@@ -6,13 +6,20 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws IOException {
+        ProcessFile processFile = new ProcessFile();
         List<String> list;
-        char ch = scanChar();
+        char ch;
 
-        ProcessFile processFile = new ProcessFile(ch);
+        ch = scanChar();
+        list = processFile.getResult(ch);
+        list.forEach(System.out::println);
 
-        list = processFile.getResult();
+        ch = scanChar();
+        list = processFile.getResult(ch);
+        list.forEach(System.out::println);
 
+        ch = scanChar();
+        list = processFile.getResult(ch);
         list.forEach(System.out::println);
     }
 
