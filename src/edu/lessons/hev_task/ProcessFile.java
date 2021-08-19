@@ -30,9 +30,9 @@ public class ProcessFile {
     }
 
     private List<String> stringProcessing(String dataFromFile, List<String> result) {
-        temp = 0;
-
         for (String str : dataFromFile.split("[^\\w']+")) {
+            temp = 0;
+
             for (int i = 0; i < str.length(); i++) {
                 if (Character.toLowerCase(ch) == Character.toLowerCase(str.charAt(i)))
                     temp++;
@@ -46,8 +46,6 @@ public class ProcessFile {
                 result.add(str);
             } else if (max == temp)
                 result.add(str);
-
-            temp = 0;
         }
 
         return result;
