@@ -6,12 +6,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ProcessFile {
     private int max, temp;
     private Path path;
     private char ch;
     private List<String> result;
+
+    private final Logger LOGGER = Logger.getLogger(ProcessFile.class.getName());
 
     public ProcessFile() {
         path = Path.of("src/edu/lessons/hev_task/hev_task.txt");
@@ -51,7 +55,7 @@ public class ProcessFile {
         return result;
     }
 
-    public List<String> getResult(char ch) throws IOException {
+    public List<String> getResult(char ch) {
         this.max = 0;
         this.ch = ch;
         result = new ArrayList<>();
@@ -63,7 +67,7 @@ public class ProcessFile {
                 stringProcessing(arr, result);
             }
         } catch (IOException e) {
-            throw new IOException("File reading error", e);
+            LOGGER.log(Level.INFO, e.getMessage());
         }
 
         System.out.println("==== Max: " + max + " ====");
